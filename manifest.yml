@@ -1,0 +1,8 @@
+applications:
+- name: sorry
+  buildpack: java_buildpack
+  memory: 128M
+  path: target/sorry-server-1.0.0-SNAPSHOT.jar
+  env:
+    JAVA_OPTS: '-XX:MaxMetaspaceSize=32M -XX:ReservedCodeCacheSize=32M -XX:CompressedClassSpaceSize=8M -XX:MaxDirectMemorySize=8M'
+    JBP_CONFIG_OPEN_JDK_JRE: '[memory_calculator: {stack_threads: 16}]'

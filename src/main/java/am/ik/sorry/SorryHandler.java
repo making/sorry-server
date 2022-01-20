@@ -14,9 +14,7 @@ import static org.springframework.web.reactive.function.server.RouterFunctions.r
 public class SorryHandler {
 
 	public RouterFunction<ServerResponse> routes() {
-		return route() //
-				.route(x -> true, this::sorry)
-				.build();
+		return route().route(x -> true, this::sorry).build();
 	}
 
 	Mono<ServerResponse> sorry(ServerRequest req) {

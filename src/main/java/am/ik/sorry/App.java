@@ -24,7 +24,7 @@ public class App {
             HandlerStrategies.builder().build());
         HttpServer httpServer = HttpServer.create().host("0.0.0.0").port(port)
             .handle(new ReactorHttpHandlerAdapter(httpHandler));
-        httpServer.bindUntilJavaShutdown(Duration.ofSeconds(3), disposableServer -> {
+        httpServer.bindUntilJavaShutdown(Duration.ofSeconds(2), disposableServer -> {
             long elapsed = System.currentTimeMillis() - begin;
             LoggerFactory.getLogger(App.class).info("Started in {} seconds",
                 elapsed / 1000.0);
